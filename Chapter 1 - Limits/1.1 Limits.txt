@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usepackage{amsmath,amssymb}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{STAT 251 Formula Sheet}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.45in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip2pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+%\colorbox[HTML]{e4e4e4}{\makebox[\textwidth-2\fboxsep][l]{texto}
+
+\begin{document}	
+	\begin{center}{\huge{\textbf{Exam 2 Formula Sheet}}}\\
+	\end{center}
+	\begin{multicols*}{2}
+		
+		\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+		rectangle, rounded corners, inner sep=10pt, inner ysep=10pt]
+		\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+		
+		
+		%------------ Discrete Random Variable and Distributions ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+
+					\begin{tabular}{lp{8cm} l}
+						Mean ($\mu$): & $E(X) = \sum_{x}xf(x)$ \\
+						Expected value: & $E(g(X)) = \sum_{x}g(x)f(x)$ \\
+						Variance ($\sigma^2$): & $Var(X) = \sum_x (x-\mu)^2f(x) = E(X^2)-[E(X)]^2$\\
+						SD ($\sigma$): & $SD(X) = \sqrt{Var(X)}$
+					\end{tabular} \\
+					\\
+					
+					
+				\end{minipage}
+			};
+			%------------ Discrete Random Variable and Distributions Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Discrete Random Variables};
+		\end{tikzpicture}
+		
+		
+		
+		
+		
+		%------------ Summarizing Main Features of f(x) ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					$E(aX+b) = aE(X)+b$\\\
+					$E(X_1 \pm X_2)=E(X_1) \pm E(X_2)$\\\
+					$E(X_1 \cdot X_2) = E(X_1) \cdot E(X_2)$\\\
+					$Var(aX+b) = a^2Var(X)$\\\
+					$Var(X_1 \pm X_2) = Var(X_1) + Var(X_2)$\\\
+				\end{minipage}
+			};
+			%------------ Summarizing Main Features of f(x) ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Properties of Expectations};
+		\end{tikzpicture}
+		
+		
+		%------------ Bernoulli Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					
+					$X \sim Bernoulli(p)$ \\
+					$P(X=k) = p^k(1-p)^{1-k}$ \\
+					
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = p$ \\
+						Variance: &$\sigma^2 = Var(X) = p(1-p)$\\
+					\end{tabular}\\
+				\end{minipage}
+			};
+			%------------  Bernoulli Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Bernoulli Distribution};
+		\end{tikzpicture}
+	
+			%------------ Binomial Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+				
+					$X \sim Bin(n, p)$\\
+					$P(X=k) = {n \choose k} p^k(1-p)^{n-k}$\\
+				
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = np$ \\
+						Variance: &$\sigma^2 = Var(X) = np(1-p)$\\
+					\end{tabular}
+				\end{minipage}
+			};
+			%------------  Binomial Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Binomial Distribution};
+		\end{tikzpicture}
+		
+				%------------ Poisson Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					
+					\textbf{Poisson Distribution:}\\
+					$X \sim Poisson(\lambda)$ \\
+					$P(X=k)=\frac{\lambda^k e^{-\lambda}}{k!}$\\
+					
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = \lambda$ \\
+						Variance: &$\sigma^2 = Var(X) = \lambda$\\
+					\end{tabular}
+					
+				\end{minipage}
+			};
+			%------------ Poisson Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Poisson Distribution};
+		\end{tikzpicture}
+	\\\\\\\\\\\\\\\\\\\\\\
+		
+		%------------ Geometric Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					$X \sim Geom(p)$ \\
+					$P(X = k) = (1-p)^{k-1}p$ \\
+					
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = \frac{1}{p}$ \\
+						Variance: &$\sigma^2 = Var(X) = \frac{1-p}{p^2}$\\
+					\end{tabular}\\
+				\end{minipage}
+			};
+			%------------ Geometric Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Geometric Distribution};
+		\end{tikzpicture}
+		
+		
+		%------------ Negative Binomial Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					$X \sim NegBin(r, p)$ \\\\
+					$P(X = k) = {k-1 \choose r-1}(1-p)^{k-r}p^r$ \\
+					
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = \frac{r}{p}$ \\
+						Variance: &$\sigma^2 = Var(X) = \frac{r(1-p)}{p^2}$\\
+					\end{tabular}\\
+				\end{minipage}
+			};
+			%------------ Negative Binomial Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Negative Binomial Distribution};
+		\end{tikzpicture}
+		
+			%------------ Hypergeometric Distribution ---------------
+		\begin{tikzpicture}
+			\node [mybox] (box){%
+				\begin{minipage}{0.46\textwidth}
+					$X \sim HypGeo(n, m, r)$ \\\\
+					$P(X = k) = \frac{{r \choose k}{n-r \choose m-k}}{{n \choose m}}$ \\
+					
+					\begin{tabular}{lp{8cm} l}
+						Mean: &$\mu = E(X) = m \cdot \frac{r}{n}$ \\
+						Variance: &$\sigma^2 = Var(X) = \frac{n-m}{n-1} \cdot m \cdot \frac{r}{n} \cdot \frac{n-r}{n}$\\
+					\end{tabular}\\
+				\end{minipage}
+			};
+			%------------ Hypergeometric Distribution Header ---------------------
+			\node[fancytitle, right=10pt] at (box.north west) {Hypergeometric Distribution};
+		\end{tikzpicture}
+		
+	\end{multicols*}
+\end{document}
+
+
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
+About
+About us
+Our values
+Careers
+Press & awards
+Blog
+Learn
+LaTeX in 30 minutes
+Templates
+Webinars
+Tutorials
+How to insert images
+How to create tables
+Plans &
