@@ -25,4 +25,57 @@ We can try this out with $f(x) = x^{2}$ and see that
 $$f'(x) = \lim_{h\to 0}\frac{(x+h)^{2} - x^{2}}{h} = \lim_{h\to 0}\frac{x^{2} + 2hx + h^{2} - x^{2}}{h} = \lim_{h\to 0}\frac{2hx+h^{2}}{h} = \lim_{h\to 0}2x + h = 2x$$
 which is what we previously had. 
 
+\section*{Exercises}
+\begin{enumerate}
+    \item For the following functions, evaluate the average rate of change for their respective intervals \begin{enumerate}
+        \item $f(x) = 3x^{2} + 2x + 1, [1,2]$
+        \item $f(x) = x^{3} + 1, [0,1]$
+        \item $f(x) = -x^{2} + x + 10, [-2,-1]$
+        \item $f(x) = -3, [1,5]$
+        \item $f(x) = \frac{1}{x^{2}}, [1,2]$
+        \item $f(x) = \sqrt{x}, [1,2]$
+        \item $f(x) = \frac{1}{x}, [0.1, 1]$
+        \item $f(x) = \sqrt{x^{2} + 1}, [1, 2]$
+        \item $f(x) = (1 + x)^{\frac{3}{2}}, [3,8]$
+        \item $f(x) = \sin{x}, \left[0, \frac{\pi}{2}\right]$
+    \end{enumerate}
+    
+    \item For the following functions, compute their difference quotients. \begin{enumerate}
+        \item $f(x) = 2x^{2} + 1$
+        \item $f(x) = x + 1$
+        \item $f(x) = 3$
+        \item $f(x) = \frac{1}{x}$
+        \item $f(x) = \sqrt{x-1}$
+        \item $f(x) = \sin{x}$
+        \item $f(x) = \sqrt{x} + 1$
+        \item $f(x) = x^{3}$
+        \item $f(x) = x^{4}$
+    \end{enumerate}
+    
+    \item For the following functions, find their derivative at the given point. \begin{enumerate}
+        \item $f(x) = 3x, x = 1$
+        \item $f(x) = x^{3}, x = 2$
+        \item $f(x) = 2x^{2} + x + 1, x = 0$
+        \item $f(x) = 10, x = 1$
+        \item $f(x) = \sqrt{x}, x = 4$
+        \item $f(x) = \sqrt{x - 1}, x = 5$
+        \item $f(x) = \frac{3}{x}, x = 1$
+    \end{enumerate}
+    
+    \item For the functions in exercise $(2)$, find the derivative of each function. 
+    
+    \item Show that the derivative of a function $f(x)$ is equal to the derivative of $g(x) = f(x) + c$ for all constants $c \in \mathbb{R}$
+    
+    \item Show that the derivative of a function $f(x)$ at $x = a$ is the equal to the derivative of a function $g(x) = f(x - c)$ at $x = c + a$ for $a, c \in \mathbb{R}$
+    
+    \item Let $f(x)$ be a differentiable function with and let $c = f'(a)$. Show that if $g(x) = bf(x)$, for some constant $b \in \mathbb{R}$, then $g'(a) = bc$.
+    
+    \item Let $f(x)$ and $g(x)$ be differentiable functions. Show that the derivative of $h(x) = f(x) + g(x)$ is $h'(x) = f'(x) + g'(x)$.
+    
+    \item We call the derivative of the derivative function as the \textbf{second derivative} and we denote this by $f''(x)$. Show, from definition, that 
+    $$f''(x) = \lim_{h\to 0}\frac{f(x + 2h) - 2f(x + h) + f(x)}{h^{2}}$$
+    Hence, find the second derivative of the following functions: $x^{2}, x^{3}, 2x + 1, 4x^{2}+5x+6$. 
+    
+\end{enumerate}
+
 \end{document}
