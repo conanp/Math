@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=2cm]{geometry}
+
+\begin{document}
+
+From Algebra, we know that the slope, $m$, of a line, $y$, is given by the formula 
+$$m = \frac{\Delta y}{\Delta x} = \frac{y_{1} - y_{2}}{x_{1} - x_{2}}$$
+where $(x_{1},y_{1})$ and $(x_{2},y_{2})$ are points on the line. The slope of a line is also known as the \textbf{rate of change} of the line since this value describes how fast the line grows or, in other words, how the $y$ values change as $x$ changes. If our curve wasn't perfectly linear, then we can take the average of how the curve changes in an interval of $x$. Let our curve be $y = f(x)$. Then we can find the \textbf{average rate of change} by picking two points $(a,f(a))$ and $(b,f(b))$ on the curve and finding the slope of the line that connects these points. If we do so, we find the average rate change on an interval $[a,b]$ to be:
+$$A = \frac{f(b) - f(a)}{b - a}$$
+We call this line that connects the two points a \textbf{secant line}. Now, what happens when $a$ and $b$ are close to each other? Surely, as $a$ and $b$ gets closer and closer, we get an average rate of change that is closer to the true rate of change of the curve. For example, if we have the curve $y = x^{2}$, the average rate of change of $y$ in the interval $[-1,1]$ is $0$. This is clearly not a very good approximation of the rate of change since we know that $y = x^{2}$ has that dip between $x = -1$ and $x = 1$, and the average rate of change doesn't represent this. However, if we take the average rate of change on the interval $[-1,-0.9]$, then we yield a value of $-1.9$, which gives a pretty good estimation of the rate of change in that interval. You can verify by drawing a line of slope $-1.9$ against the curve around the interval $[-1,-0.9]$ and see that it matches up pretty well. If we use the interval $[-1,-0.999]$, then we reach an average value of $-1.999$. We can probably guess that the rate of change of $f(x)$ around $x = -1$ is going to be $-2$ since that's what it looks like its getting closer to. How can we actually show that this is going to $-2$? What we are essentially doing is taking the limit of the $b$ value to $-1$. So, the rate of change of the function at $x = -1$ is given by 
+$$R = \lim_{x\to -1}\frac{x^{2} - (-1)^{2}}{x - (-1)} = \lim_{x\to -1}\frac{x^{2} - 1}{x + 1}$$
+From earlier, we can evaluate the limit by rewriting $x^{2} - 1$ as $(x-1)(x+1)$ and cancelling with the denominator to reach $R = \lim_{x\to -1}x-1$, which gives $R = -2$. To generalise, the rate of change of a function, $f(x)$, at $x = a$ is given by 
+$$f'(a) = \lim_{x\to a}\frac{f(x) - f(a)}{x - a}$$
+$f'(x)$ is known as the \textbf{derivative} of a function $f(x)$. $f'(x)$ or the derivative gives us the rate of change at any point $x = a$ which is in the domain of the function. Going back to our example $f(x) = x^{2}$, the derivative at $x = a$ is given by 
+$$f'(a) = \lim_{x\to a}\frac{x^{2} - a^{2}}{x - a} = \lim_{x\to a}\frac{(x-a)(x+a)}{x-a} = \lim_{x\to a}x+a = a+a = 2a$$
+This means that $f'(x) = 2x$. This new function would give us the rate of change at any point, for example, at $x = 5$, the rate of change of $f(x) = x^{2}$ is $10$. At $x = 3$, the rate of change of $f(x) = x^{2}$ is $6$ and at $x = -9$, the rate of change of $f(x) = x^{2}$ is $-18$. There is another way to express the derivative of a function. Let $(x, f(x))$ and $(x+h, f(x+h))$ be points on a curve $y = f(x)$, then the average rate of change on the interval $[x, x+h]$ is given by 
+$$A = \frac{f(x+h) - f(x)}{h}$$
+The above formula is known as the \textbf{difference quotient}. With the same reasoning as the previous formula for the derivative, we have the following formula for the derivative
+$$f'(x) = \lim_{h\to 0}\frac{f(x+h) - f(x)}{h}$$
+We can try this out with $f(x) = x^{2}$ and see that
+$$f'(x) = \lim_{h\to 0}\frac{(x+h)^{2} - x^{2}}{h} = \lim_{h\to 0}\frac{x^{2} + 2hx + h^{2} - x^{2}}{h} = \lim_{h\to 0}\frac{2hx+h^{2}}{h} = \lim_{h\to 0}2x + h = 2x$$
+which is what we previously had. 
+
+\end{document}
