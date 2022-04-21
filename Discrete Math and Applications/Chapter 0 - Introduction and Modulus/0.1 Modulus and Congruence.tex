@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{longdivision}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=2cm]{geometry}
+
+%Feel free to add packages and shortcuts, however, it should not interfere with the margins and the structure of the file
+
+\onehalfspacing
+
+\begin{document}
+
+\section*{0.1 Modulus, Divisibility, and Congruence}
+\rule{500pt}{1pt} \\
+\indent \indent The remainder is something we learned from math as a child when we first learned long division. It only mattered because we were required to write down the remainder of a long division problem and that was that. It was brought up later in life when we started to do polynomial division, only this time the remainder had some significance in solving the problem correctly. However, like many topics in discrete mathematics, the simple things we were taught can become very complicated and rigorous. \\
+\indent \indent The remainder is very important in discrete mathematics for a few different reasons, which we will explore. How do we get the remainder though, and how do we mathematically show it in a problem? This is where the modulo operator comes in, and it is notated in different ways. If you're a computer scientist you may have recognized this notated as (\%), but the mathematician notates it as $\mod$ to avoid conflicts with percentages. Now in most cases you'll have the form $a \mod{b}$ where $a$ is called the dividend and $b$ is called the divisor. \\
+\indent \indent So now that we have defined modulus, let's use it in an example:
+\subsubsection*{Example 1: Introduction to Modulus}
+\begin{center}
+    Solve $15 \mod{6}$
+\end{center}
+\subsubsection*{Solution}
+\begin{center}
+\intlongdivision{15}{6}
+\end{center}
+
+\indent \indent In the solution here we see that, through long division, our remainder and answer is equal to 3. What's notable that the untrained discrete math eye doesn't see however, is how the remainder is less than the divisor. Is this always the case? Most of the time yes it will be, but we have to understand why that is first. We can look at the following examples to figure out why:
+\subsubsection*{Example 2: The Clock}
+
+\begin{center}
+    \text{1. Solve} $11 \mod{12}$ \hfill \text{2. Solve} $12 \mod{12}$ \hfill \text{3. Solve} $13 \mod{12}$
+\end{center}
+
+\subsubsection*{Solution}
+\begin{center}
+    \intlongdivision{11}{12} \hfill \intlongdivision{12}{12} \hfill \intlongdivision{13}{12}
+\end{center}
+
+\indent \indent So let's break down what this means mathematically speaking. Firstly, in our example for the first solve problem we ended up with a remainder of 11. Although it doesn't show it, we actually have a remainder of 11 because since the dividend can't be divided by the divisor then it would just give us back the dividend as the remainder. \\ 
+\indent \indent Secondly, in our example for the second solve problem we ended up with a remainder of 0. This is a concept which we call "divisibility". Let's propose we're given two integers $a$ and $b$ and that $\frac{a}{b} = n$ where n is a whole number. We can say that b divides a, or in the mathematical notation we write: $b \mid a$.
+
+\end{document}
